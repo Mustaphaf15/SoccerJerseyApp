@@ -24,7 +24,7 @@ function ProductOverviewScreen({ route, navigation }) {
   return (
     <View style={styles.container}>
       <FlatList
-        data={displayedProducts}
+        data={displayedProduct}
         keyExtractor={(item) => item.id}
         renderItem={renderProductItem}
       />
@@ -32,7 +32,7 @@ function ProductOverviewScreen({ route, navigation }) {
   );
 }
 
-export default ProductsOverviewScreen;
+export default ProductOverviewScreen;
 
 const styles = StyleSheet.create({
   container: {

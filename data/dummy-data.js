@@ -1,6 +1,6 @@
 import Product from "../models/product";
 
-export const Product = [
+export const Products = [
   new Product(
     1,
     "Venezia FC 2021/22 Maillot de football à domicile",

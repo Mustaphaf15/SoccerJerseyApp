@@ -7,4 +7,4 @@ class product {
   }
 }
 
-export default Meal;
+export default product;
