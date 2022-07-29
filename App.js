@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
+import { Button, StyleSheet } from "react-native";
 import { NavigationContainer, StackActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -76,7 +76,7 @@ export default function App() {
               component={JerseysOverviewScreen}
             />
             <Stack.Screen
-              name="JerseyDetails"
+              name="JerseysDetails"
               component={JerseysDetailScreen}
             />
           </Stack.Navigator>

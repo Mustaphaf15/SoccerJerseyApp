@@ -45,18 +45,11 @@ const JerseysDetailScreen = ({ route, navigation }) => {
     <ScrollView style={styles.rootContainer}>
       <Image source={{ uri: selectJersey.imageUrl }} style={styles.image} />
       <Text style={styles.title}>{selectJersey.title}</Text>
-      <JerseyDetails
-        duration={selectJersey.duration}
-        complexity={selectJersey.complexity}
-        affordability={selectJersey.affordability}
-        styleText={styles.detailText}
-      />
+      <JerseyDetails price={selectJersey.price} />
       <View style={styles.listOuterContainer}>
         <View style={styles.listContainer}>
-          <Subtitle>Ingredients</Subtitle>
-          <List data={selectJersey.ingredients} />
-          <Subtitle>Steps</Subtitle>
-          <List data={selectJersey.steps} />
+          <Subtitle>Description</Subtitle>
+          <List data={selectJersey.description} />
         </View>
       </View>
     </ScrollView>

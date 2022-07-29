@@ -23,9 +23,8 @@ const JerseysOverviewScreen = ({ route, navigation }) => {
       id: item.id,
       title: item.title,
       imageUrl: item.imageUrl,
-      affordability: item.affordability,
-      complexity: item.complexity,
-      duration: item.duration,
+      price: item.price,
+      description: item.description,
     };
     return <JerseyItem {...jerseyItemProps} />;
   };
@@ -33,7 +32,7 @@ const JerseysOverviewScreen = ({ route, navigation }) => {
   return (
     <View style={style.container}>
       <FlatList
-        data={displayedJersey}
+        data={displayedJerseys}
         keyExtractor={(item) => item.id}
         renderItem={renderJerseyItem}
       />
