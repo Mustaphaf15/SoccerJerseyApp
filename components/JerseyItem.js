@@ -7,41 +7,41 @@ import {
   Platform,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import JerseyDetails from "./JerseyDetails";
 
-import ProductDetails from "./ProductDetails";
-
-function ProductItem({ id, title, imageUrl, price }) {
-  const navigation = useNavigation();
-
-  function selectProductItemHandler() {
-    navigation.navigate("ProductDetail", {
-      productId: id,
+const JerseyItem = ({ id, title, price, imageUrl, description }) => {
+  const navigator = useNavigation();
+  const selectJerseyItemHandler = () => {
+    navigator.navigate("JerseyDetails", {
+      JerseyId: id,
     });
-  }
+  };
 
   return (
-    <View style={styles.ProductItem}>
+    <View style={styles.jerseyItem}>
       <Pressable
         android_ripple={{ color: "#ccc" }}
         style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
-        onPress={selectProductItemHandler}
+        onPress={selectJerseyItemHandler}
       >
         <View style={styles.innerContainer}>
-          <View>
-            <Image source={{ uri: imageUrl }} style={styles.image} />
-            <Text style={styles.title}>{title}</Text>
-          </View>
-          <ProductDetails price={price} />
+          <Image source={{ uri: imageUrl }} style={styles.image} />
+          <Text style={styles.title}>{title}</Text>
         </View>
+        <JerseyDetails
+          price={price}
+          complexity={complexity}
+          description={description}
+        />
       </Pressable>
     </View>
   );
-}
+};
 
-export default ProductItem;
+export default JerseyItem;
 
 const styles = StyleSheet.create({
-  ProductItem: {
+  jerseyItem: {
     margin: 16,
     borderRadius: 8,
     overflow: Platform.OS === "android" ? "hidden" : "visible",
@@ -68,5 +68,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     margin: 8,
+  },
+  details: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 8,
+  },
+  detailItem: {
+    marginHorizontal: 4,
+    fontSize: 12,
   },
 });
